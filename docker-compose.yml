@@ -1,0 +1,29 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_HOST: ${DB_HOST}
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+  cache:
+    image: redis:6.2-alpine
+    ports:
+      - "6379:6379"
+  api:
+    build: ./cognum-api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - cache
+  notifier:
+    build: ./cognum-notifier
+    ports:
+      - "3001:3001"
+    depends_on:
+      - postgres
+      - cache
