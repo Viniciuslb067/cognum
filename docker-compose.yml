@@ -20,6 +20,7 @@ services:
     depends_on:
       - postgres
       - cache
+    env_file: .env
   notifier:
     build: ./cognum-notifier
     ports:
@@ -27,3 +28,4 @@ services:
     depends_on:
       - postgres
       - cache
+    env_file: .env
