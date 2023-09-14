@@ -1,0 +1,6 @@
+[submodule "cognum-api"]
+	path = cognum-api
+	url = https://github.com/Viniciuslb067/cognum-api
+[submodule "cognum-notifier"]
+	path = cognum-notifier
+	url = https://github.com/Viniciuslb067/cognum-notifier
