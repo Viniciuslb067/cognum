@@ -1,7 +1,7 @@
 
+ <h1 align="center">Cognum challenge</h1>
 
-  # Cognum challenge
-
+<br/>
 
 ## 🧪 Tecnologias
 
